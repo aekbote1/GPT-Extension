@@ -1,7 +1,10 @@
 import React, { ReactElement, useEffect, useState } from 'react';
 import { APP_COLLAPSE_WIDTH, APP_EXTEND_WIDTH, URLS } from './const';
+
 import classNames from 'classnames';
 import Button from './components/Button';
+import Menus from './components/Menus';
+import Gist from "react-gist";
 
 export default function Panel({ onWidthChange, initialEnabled }: { onWidthChange: (value: number) => void, initialEnabled: boolean }): ReactElement {
   const [enabled, setEnabled] = useState(initialEnabled);
@@ -23,6 +26,7 @@ export default function Panel({ onWidthChange, initialEnabled }: { onWidthChange
   }
 
   return (
+    
     <div
       style={{
         width: sidePanelWidth - 5,
@@ -30,32 +34,15 @@ export default function Panel({ onWidthChange, initialEnabled }: { onWidthChange
       }}
       className="absolute top-0 right-0 bottom-0 z-max bg-[#F5F8FA] ease-in-out duration-300 overflow-hidden"
     >
-      <iframe
-        className={classNames('absolute w-full h-full border-none ease-linear overflow-hidden', {
-          'opacity-0': !enabled,
-          '-z-10': !enabled,
-        })}
-        title={URLS[tabIndex].name}
-        src={URLS[tabIndex].url}
-      />
       <div
         className={classNames('absolute h-full flex border-none flex-col ease-linear w-[50px] space-y-3 p-1', {
           'opacity-0': enabled,
           '-z-10': enabled,
         })}
       >
-        {URLS.map(({ name, image }, _index) => {
-          function onMenuClick(index: number) {
-            setTabIndex(index);
-            openPanel(true);
-          }
-          return (
-            <Button active={_index === tabIndex} onClick={() => onMenuClick(_index)} className="py-2">
-              <img src={image} className="w-full" />
-            </Button>
-          );
-        })}
+
       </div>
+      <Menus />
       <div className="absolute bottom-0 left-0 w-[50px] z-10 flex justify-center items-center p-1">
         <Button active={enabled} onClick={() => openPanel()}>
           <span>
