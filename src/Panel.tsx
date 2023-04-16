@@ -4,12 +4,18 @@ import { APP_COLLAPSE_WIDTH, APP_EXTEND_WIDTH, URLS } from './const';
 import classNames from 'classnames';
 import Button from './components/Button';
 import Menus from './components/Menus';
+import ContentArea from './components/ContentArea';
+import Test from './components/Test';
 import Gist from "react-gist";
+
+
 
 export default function Panel({ onWidthChange, initialEnabled }: { onWidthChange: (value: number) => void, initialEnabled: boolean }): ReactElement {
   const [enabled, setEnabled] = useState(initialEnabled);
   const [sidePanelWidth, setSidePanelWidth] = useState(enabled ? APP_EXTEND_WIDTH: APP_COLLAPSE_WIDTH);
   const [tabIndex, setTabIndex] = useState(0);
+
+  
 
   function handleOnToggle(enabled: boolean) {
     const value = enabled ? APP_EXTEND_WIDTH : APP_COLLAPSE_WIDTH;
@@ -42,7 +48,7 @@ export default function Panel({ onWidthChange, initialEnabled }: { onWidthChange
       >
 
       </div>
-      <Menus />
+      <ContentArea />
       <div className="absolute bottom-0 left-0 w-[50px] z-10 flex justify-center items-center p-1">
         <Button active={enabled} onClick={() => openPanel()}>
           <span>
