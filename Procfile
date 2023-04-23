@@ -1,1 +1,1 @@
-web: node dist/index.6099912e.js
+web: node public/dist/index.6099912e.js
