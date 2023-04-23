@@ -8,16 +8,18 @@
     "prestart": "yarn style",
     "start": "parcel --dist-dir ./public/dist",
     "prebuild": "yarn style && rm -rf ./public/dist",
-    "build": "parcel build --dist-dir ./public/dist --no-content-hash" ,
+    "build": "parcel build --dist-dir ./public/dist --no-content-hash",
     "style": "npx tailwindcss -i ./src/input.css -o ./src/tailwindcss-output.css",
     "style:watch": "yarn style -- --watch"
   },
   "dependencies": {
+    "chatgpt": "^5.2.2",
     "classnames": "^2.3.1",
     "react": "^18.2.0",
     "react-app-polyfill": "^3.0.0",
     "react-dom": "^18.2.0",
-    "react-frame-component": "^5.2.3"
+    "react-frame-component": "^5.2.3",
+    "react-gist": "^1.2.4"
   },
   "devDependencies": {
     "@types/react": "^18.0.19",

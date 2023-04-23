@@ -31,9 +31,7 @@ export default function ContentArea() {
           </div>
         </div> 
       </section>
-      <h2>Content Area</h2>
       <Panel
-        title="ChatGPT"
         isActive={activeIndex === 0}
         onShow={() => setActiveIndex(0)}
       >
@@ -44,18 +42,17 @@ export default function ContentArea() {
       </div>
       </Panel>
       <Panel
-        title="Visit Us"
         isActive={activeIndex === 1}
         onShow={() => setActiveIndex(1)}
       >
         <div className='contentArea'>
-        <h1>For more information...</h1>
+        <h1 id = "fyi">For more information...</h1>
         <br></br>
         <br></br>
         <br></br>
         <br></br>
         <div className='button'>
-          <a href='https://www.apple.com/store?afid=p238%7CseIEs444j-dc_mtid_1870765e38482_pcrid_649686730713_pgrid_13945964887_pntwk_g_pchan__pexid__&cid=aos-us-kwgo-brand-apple--slid---product-'>Visit Us!</a>
+          <a href='https://showcase-6672269.codehs.me/index.html'>Visit Us!</a>
         </div>
     </div>
       </Panel>

@@ -22,9 +22,9 @@ function templateGPTEmpty() {
     
   );
 }
-function templateGPT(showChatGPT) {
+function templateGPT() {
   
-    if(showChatGPT){
+    if(this.showChatGPT){
       return templateGPTFull();
     }else{
       return templateGPTEmpty()  
@@ -32,6 +32,8 @@ function templateGPT(showChatGPT) {
   
 }
 
-export default function ChatGPT(showChatGPT) {
-  return templateGPT(showChatGPT);
+export default function ChatGPT() {
+  const [showChatGPT, setShowChatGPT] = useState(false);
+
+  return templateGPT();
 }
