@@ -3,10 +3,11 @@
   "version": "0.2.0",
   "license": "MIT",
   "source": "./src/index.html",
+  "homepage": "index.html",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "prestart": "yarn style",
-    "start": "node index.html",
+    "start": "parcel --dist-dir ./public/dist",
     "prebuild": "yarn style && rm -rf ./public/dist",
     "build": "parcel build --dist-dir ./public/dist --no-content-hash",
     "style": "npx tailwindcss -i ./src/input.css -o ./src/tailwindcss-output.css",
