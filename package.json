@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "license": "MIT",
   "source": "./src/index.html",
-  "homepage": "index.html",
+  "homepage": "index.6099912e.js",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "prestart": "yarn style",
