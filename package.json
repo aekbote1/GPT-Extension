@@ -6,7 +6,7 @@
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "prestart": "yarn style",
-    "start": "parcel --dist-dir ./public/dist",
+    "start": "node index.html",
     "prebuild": "yarn style && rm -rf ./public/dist",
     "build": "parcel build --dist-dir ./public/dist --no-content-hash",
     "style": "npx tailwindcss -i ./src/input.css -o ./src/tailwindcss-output.css",
