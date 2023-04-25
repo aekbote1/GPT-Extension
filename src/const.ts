@@ -1,8 +1,7 @@
 export const URLS = [
   {
     name: 'ChatGPT',
-    url: 'index.html',
-    image: 'https://clipartix.com/wp-content/uploads/2016/07/Eyes-eye-clip-art-black-and-white-free-clipart-images-6.png'
+    url: 'https://testwebapp1.herokuapp.com/',
   },
   
 ] as const;

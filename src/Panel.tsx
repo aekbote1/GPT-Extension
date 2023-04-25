@@ -40,6 +40,16 @@ export default function Panel({ onWidthChange, initialEnabled }: { onWidthChange
       }}
       className="absolute top-0 right-0 bottom-0 z-max bg-[#F5F8FA] ease-in-out duration-300 overflow-hidden"
     >
+
+    {/* <iframe
+      className={classNames('absolute w-full h-full border-none ease-linear overflow-hidden', {
+        'opacity-0': !enabled,
+        '-z-10': !enabled,
+      })}
+      title={URLS[tabIndex].name}
+      src={URLS[tabIndex].url}
+    />   */}
+
       <div
         className={classNames('absolute h-full flex border-none flex-col ease-linear w-[50px] space-y-3 p-1', {
           'opacity-0': enabled,
@@ -48,7 +58,8 @@ export default function Panel({ onWidthChange, initialEnabled }: { onWidthChange
       >
 
       </div>
-      <ContentArea />
+      <ContentArea frameEnabled={enabled}
+      tabIndex={tabIndex}/>
       <div className="absolute bottom-0 left-0 w-[50px] z-10 flex justify-center items-center p-1">
         <Button active={enabled} onClick={() => openPanel()}>
           <span>

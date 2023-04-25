@@ -2,12 +2,17 @@ import classNames from 'classnames';
 import React, { ReactElement, ReactNode, useState } from 'react';
 import './menu.css';
 import Button from './Button';
+import { URLS } from './../const';
+
 
 function onShow(){
 
 }
 
-export default function ContentArea() {
+export default function ContentArea(
+  frameEnabled,
+  tabIndex
+) {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
     <>
@@ -36,10 +41,15 @@ export default function ContentArea() {
         onShow={() => setActiveIndex(0)}
       >
         <div className='contentArea'>
-        <h1>This is the ChatGPT Policy Reader</h1>
-        <br></br>
-        <h2>data goes here</h2>
-      </div>
+          <iframe
+            className={classNames('absolute w-full h-full border-none ease-linear overflow-hidden', {
+              'opacity-0': !frameEnabled,
+              '-z-10': !frameEnabled,
+            })}
+            //localhost is where it will be hosted until final
+            src="http://localhost:3000"
+          />  
+        </div>
       </Panel>
       <Panel
         isActive={activeIndex === 1}
