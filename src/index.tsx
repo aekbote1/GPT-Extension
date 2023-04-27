@@ -20,9 +20,20 @@ async function loadChromeStorage() {
   return initialEnabled;
 }
 
+// chrome.runtime.onMessage.addListener(
+//   function(request, sender, sendResponse) {
+//     console.log(sender.tab ?
+//                 "from a content script:" + sender.tab.url :
+//                 "from the extension");
+//   }
+// );
+
 async function init() {
   const initialEnabled = await loadChromeStorage();
 
+  console.log('current url:::' + location.href);
+  const topURL = location.href;
+  
   // Create html tag wrapper
   const htmlWrapper = document.querySelectorAll('html')[0];
   htmlWrapper.id = 'original-html-wrapper';
@@ -61,8 +72,7 @@ async function init() {
     app.style['max-width'] = `${value}px`;
     htmlWrapper.style['margin-right'] = `${value}px`;
   }
-
-  root.render(<Panel onWidthChange={onSidePanelWidthChange} initialEnabled={initialEnabled} />);
+  root.render(<Panel onWidthChange={onSidePanelWidthChange} initialEnabled={initialEnabled}  />);
 }
 
 init();

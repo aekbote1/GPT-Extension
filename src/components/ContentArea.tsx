@@ -14,6 +14,8 @@ export default function ContentArea(
   tabIndex
 ) {
   const [activeIndex, setActiveIndex] = useState(0);
+  console.log('from content panel current url:::' + location.href);
+
   return (
     <>
       <section>
@@ -47,7 +49,7 @@ export default function ContentArea(
               '-z-10': !frameEnabled,
             })}
             //localhost is where it will be hosted until final
-            src="http://localhost:3000"
+            src={("http://localhost:3000" + "?" + "currentURL=" + location.href)}
           />  
         </div>
       </Panel>
