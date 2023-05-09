@@ -1,6 +1,6 @@
 .menu-img{
-    width: 40px;
-    height: 40px;
+    width: 150px;
+    height: 100px;
  }
 
 .row {
@@ -25,7 +25,7 @@
 #col2 {
     font-size: large;
     color: white;
-    padding-left: 171.365px;
+    padding-left: 100px;
     padding-top: 9.5px;
 }
 

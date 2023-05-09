@@ -3,7 +3,7 @@ import React, { ReactElement, ReactNode, useState } from 'react';
 import './menu.css';
 import Button from './Button';
 import { URLS } from './../const';
-
+import logo from '../images/logo.png'
 
 function onShow(){
 
@@ -24,7 +24,7 @@ export default function ContentArea(
             <div className='col'>
               <Button active={true} onClick={() => setActiveIndex(0)} className="py-2">
                 <img className="menu-img" 
-                  src="https://clipartix.com/wp-content/uploads/2016/07/Eyes-eye-clip-art-black-and-white-free-clipart-images-6.png"
+                  src={logo}
                   alt="ChatGPT Logo"
                   id="col1"
                 />
@@ -49,7 +49,7 @@ export default function ContentArea(
               '-z-10': !frameEnabled,
             })}
             //localhost is where it will be hosted until final
-            src={("http://localhost:3000" + "?" + "currentURL=" + location.href)}
+            src={("https://testwebapp1.herokuapp.com" + "?" + "currentURL=" + location.href)}
           />  
         </div>
       </Panel>
@@ -58,16 +58,16 @@ export default function ContentArea(
         onShow={() => setActiveIndex(1)}
       >
         <div className='contentArea'>
-        <h1 id = "fyi">For more information...</h1>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <div className='button'>
-          <a href='https://showcase-6672269.codehs.me/index.html'>Visit Us!</a>
+        <iframe
+            className={classNames('absolute w-full h-full border-none ease-linear overflow-hidden', {
+              'opacity-0': !frameEnabled,
+              '-z-10': !frameEnabled,
+            })}
+            //localhost is where it will be hosted until final
+            src={("https://testwebapp1.herokuapp.com/visitus.html" + "?" + "currentURL=" + location.href)}
+          />  
         </div>
-    </div>
-      </Panel>
+    </Panel>
     </>
   );
 }
