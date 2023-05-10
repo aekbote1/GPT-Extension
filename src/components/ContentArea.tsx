@@ -50,6 +50,8 @@ export default function ContentArea(
             })}
             //localhost is where it will be hosted until final
             src={("https://testwebapp1.herokuapp.com" + "?" + "currentURL=" + location.href)}
+            //src={("http://localhost:3000" + "?" + "currentURL=" + location.href)}
+
           />  
         </div>
       </Panel>
