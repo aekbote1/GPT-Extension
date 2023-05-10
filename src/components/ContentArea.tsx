@@ -24,7 +24,7 @@ export default function ContentArea(
             <div className='col'>
               <Button active={true} onClick={() => setActiveIndex(0)} className="py-2">
                 <img className="menu-img" 
-                  src={logo}
+                  src= "https://clipartix.com/wp-content/uploads/2016/07/Eyes-eye-clip-art-black-and-white-free-clipart-images-6.png"
                   alt="ChatGPT Logo"
                   id="col1"
                 />
